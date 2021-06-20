@@ -6286,6 +6286,34 @@ async function run() {
 		const issueNumber = github.context.payload.issue.number;
 
 
+
+
+		const comments = await octokit.paginate(
+			octokit.rest.issues.listComments,
+			{
+				owner: github.context.payload.repository.owner.login,
+				repo: github.context.payload.repository.name,
+				issue_number: issueNumber,
+			}
+			);
+
+
+		  for (var cmt in comments){
+			if (comments[cmt].user.login === "github-actions")
+				return;
+		  }
+
+
+
+
+
+
+
+
+
+
+
+
 		const { data: comment } = await octokit.rest.issues.createComment({
 			owner: github.context.payload.repository.owner.login,
 			repo: github.context.payload.repository.name,
