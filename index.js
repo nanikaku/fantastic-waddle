@@ -9,8 +9,8 @@ async function run() {
 
 
 		const { data: comment } = await octokit.rest.issues.createComment({
-			owner: github.payload.repository.owner.login,
-			repo: github.payload.repository.name,
+			owner: github.context.payload.repository.owner.login,
+			repo: github.context.payload.repository.name,
 			issue_number: issueNumber,
 			body: "test",
 		});
