@@ -21,6 +21,7 @@ async function run() {
 
 
 		  for (var cmt in comments){
+			core.debug(`Inputs: ${comments[cmt].user.login}`);
 			if (comments[cmt].user.login === "github-actions")
 				return;
 		  }
