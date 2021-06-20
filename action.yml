@@ -1,0 +1,19 @@
+name: "Issue comment"
+author: "kyoncy"
+description: "comment when open issue"
+branding:
+  icon: message-circle
+  color: blue
+inputs:
+  token:
+    description: "GitHub token for use by this action."
+    required: false
+    default: ${{ github.token }}
+  message:
+    description: "Message"
+    required: false
+    default: |
+      Thank you for opening the issue!
+runs:
+  using: "node12"
+  main: "dist/index.js"

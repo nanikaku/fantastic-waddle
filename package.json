@@ -1,0 +1,25 @@
+{
+  "name": "fantastic-waddle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanikaku/fantastic-waddle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanikaku/fantastic-waddle/issues"
+  },
+  "homepage": "https://github.com/nanikaku/fantastic-waddle#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0",
+    "@vercel/ncc": "^0.28.6"
+  }
+}

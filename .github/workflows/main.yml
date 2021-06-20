@@ -1,0 +1,12 @@
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  greet:
+    if: github.event.label.name == 'bug'
+    runs-on: ubuntu-latest
+    name: Issue comment
+    steps:
+      - name: issue comment
+        uses: ./
