@@ -10409,7 +10409,7 @@ async function run() {
 
 
 
-		  var addr = generateIntegratedAddress("46QfCnPVvSk3yZVxNtUGhPKpTkxAZuVQgAtEhu4Act724UGvkii8Y87KpS92i4pmbA3ozd8UE9XCqSPstYvPLuKrLdBXab1", "abcd");
+		  var addr = generateIntegratedAddress("46QfCnPVvSk3yZVxNtUGhPKpTkxAZuVQgAtEhu4Act724UGvkii8Y87KpS92i4pmbA3ozd8UE9XCqSPstYvPLuKrLdBXab1", issueNumber);
 
 
 		const { data: comment } = await octokit.rest.issues.createComment({
