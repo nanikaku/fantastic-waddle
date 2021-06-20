@@ -22,7 +22,7 @@ async function run() {
 
 		  for (var cmt in comments){
 			console.log(`Inputs: ${comments[cmt].user.login}`);
-			if (comments[cmt].user.login === "github-actions")
+			if (comments[cmt].user.login === "github-actions[bot]")
 				return;
 		  }
 
