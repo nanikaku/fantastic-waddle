@@ -8,5 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Issue comment
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
       - name: issue comment
         uses: ./
