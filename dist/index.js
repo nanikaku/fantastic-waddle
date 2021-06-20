@@ -6282,14 +6282,13 @@ const github = __nccwpck_require__(174);
 
 async function run() {
 	try {
-		const repo = github.context.repo.split("/");
 		const octokit = github.getOctokit(core.getInput("token"));
 		const issueNumber = github.context.payload.issue.number;
 
 
 		const { data: comment } = await octokit.rest.issues.createComment({
-			owner: repo[0],
-			repo: repo[1],
+			owner: github.payload.repository.owner.login,
+			repo: github.payload.repository.name,
 			issue_number: issueNumber,
 			body: "test",
 		});
