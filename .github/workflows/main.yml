@@ -1,10 +1,9 @@
 on:
   issues:
-    types: [labeled]
+    types: [opened]
 
 jobs:
   greet:
-    if: github.event.label.name == 'bug'
     runs-on: ubuntu-latest
     name: Issue comment
     steps:
