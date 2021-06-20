@@ -1,5 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
+const integratedadrees = require("integraddr");
 
 
 async function run() {
@@ -21,7 +22,6 @@ async function run() {
 
 
 		  for (var cmt in comments){
-			console.log(`Inputs: ${comments[cmt].user.login}`);
 			if (comments[cmt].user.login === "github-actions[bot]")
 				return;
 		  }
@@ -34,14 +34,14 @@ async function run() {
 
 
 
-
+		  var addr = generateIntegratedAddress("46QfCnPVvSk3yZVxNtUGhPKpTkxAZuVQgAtEhu4Act724UGvkii8Y87KpS92i4pmbA3ozd8UE9XCqSPstYvPLuKrLdBXab1", "abcd");
 
 
 		const { data: comment } = await octokit.rest.issues.createComment({
 			owner: github.context.payload.repository.owner.login,
 			repo: github.context.payload.repository.name,
 			issue_number: issueNumber,
-			body: "test",
+			body: "test" + addr,
 		});
 
 	core.setOutput("comment-id", comment.id);
