@@ -1,0 +1,13 @@
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  testissues:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: issue comment
+        uses: ./
